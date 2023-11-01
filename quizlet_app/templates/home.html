@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Your Dashboard, {{ user.username }}</h1>
+    
+    <!-- Create Deck Link -->
+    <a href="{% url 'create_deck' %}">Create a Deck</a><br>
+
+    <!-- List of User's Decks -->
+    <h2>Your Decks:</h2>
+    <ul>
+        {% for deck in user_decks %}
+            <li><a href="{% url 'view_deck' deck.id %}">{{ deck.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <!-- Logout Button -->
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>

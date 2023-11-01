@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Deck</title>
+</head>
+<body>
+    <h1>{{ deck.title }}</h1>
+    <a href="{% url 'home' %}">Back to Dashboard</a>
+    <a href="{% url 'add_flashcard' deck.id %}">Add Flashcard</a>
+    <ul>
+        {% for flashcard in flashcards %}
+            <li>
+                <strong>Question:</strong> {{ flashcard.question }}<br>
+                <strong>Answer:</strong> {{ flashcard.answer }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'logout' %}">Logout</a>
+
+</body>
+</html>
