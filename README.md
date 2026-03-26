@@ -1,4 +1,4 @@
-# Quizlet Clone Application
+# Quizlet Clone
 
 A functional clone of the popular Quizlet platform, designed for creating and studying digital flashcards and quizzes.
 
